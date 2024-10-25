@@ -1,4 +1,3 @@
-// src/app/api/products/[id]/route.ts
 import { NextResponse } from "next/server";
 import { connect } from "@/dbconfig/dbconfig"; // Ensure you have a dbConnect file for MongoDB connection
 import Product from "@/models/Product"; // Ensure you have a Product model defined
@@ -16,8 +15,8 @@ export async function GET(request: Request, { params }: { params: { id: string }
     }
 
     return NextResponse.json(product);
-  } catch (error: unknown) {
+  } catch (error) {
     const Error = error as Error;
-    return NextResponse.json({ error: Error.message }, { status: 500});
-}
+    return NextResponse.json({ error: Error.message }, { status: 500 });
+  }
 }
