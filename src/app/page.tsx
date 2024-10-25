@@ -1,101 +1,80 @@
-import Image from "next/image";
+// src/app/page.tsx
+"use client";
+
+import Link from "next/link";
+import React from "react";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen flex flex-col bg-gray-50 overflow-hidden">
+      <header className="w-full bg-white shadow-lg p-4 flex justify-between items-center transition duration-500 hover:shadow-2xl">
+        <h1 className="text-3xl font-bold text-indigo-600">Perfume Shop</h1>
+        <nav className="space-x-6">
+          <Link href="/" className="text-gray-700 hover:text-indigo-600 transition duration-300">Home</Link>
+          <Link href="/products" className="text-gray-700 hover:text-indigo-600 transition duration-300">Products</Link>
+          <Link href="/about" className="text-gray-700 hover:text-indigo-600 transition duration-300">About</Link>
+        </nav>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <main className="flex flex-col items-center text-center p-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-400 to-purple-600 animate-gradient-bg"></div>
+        <div className="relative z-10 flex flex-col items-center bg-white bg-opacity-80 rounded-lg p-8 mt-16 shadow-lg transition-transform duration-500 transform hover:scale-105">
+          <h2 className="text-4xl font-bold text-indigo-800">Discover Your Scent</h2>
+          <p className="text-gray-700 mt-4">
+            Explore our exclusive range of perfumes crafted just for you.
+          </p>
+          <Link href="/products" className="mt-6 bg-indigo-600 text-white px-8 py-4 rounded-full shadow-lg hover:bg-indigo-500 transition duration-300 transform hover:scale-105">
+            Shop Now
+          </Link>
         </div>
+
+        <section className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Product Card 1 */}
+          <div className="bg-white rounded-lg shadow-md p-4 transition-transform duration-300 transform hover:scale-105 hover:shadow-lg">
+            <img src="https://images.pexels.com/photos/4164842/pexels-photo-4164842.jpeg" alt="Ocean Breeze Perfume" className="w-full h-48 object-cover rounded-t-lg" />
+            <h3 className="text-xl font-semibold mt-2">Ocean Breeze</h3>
+            <p className="text-gray-500 text-lg">$29.99</p>
+          </div>
+
+          {/* Product Card 2 */}
+          <div className="bg-white rounded-lg shadow-md p-4 transition-transform duration-300 transform hover:scale-105 hover:shadow-lg">
+            <img src="https://images.pexels.com/photos/1679612/pexels-photo-1679612.jpeg" alt="Vanilla Sunset Perfume" className="w-full h-48 object-cover rounded-t-lg" />
+            <h3 className="text-xl font-semibold mt-2">Vanilla Sunset</h3>
+            <p className="text-gray-500 text-lg">$34.99</p>
+          </div>
+
+          {/* Product Card 3 */}
+          <div className="bg-white rounded-lg shadow-md p-4 transition-transform duration-300 transform hover:scale-105 hover:shadow-lg">
+            <img src="https://images.pexels.com/photos/1775681/pexels-photo-1775681.jpeg" alt="Citrus Splash Perfume" className="w-full h-48 object-cover rounded-t-lg" />
+            <h3 className="text-xl font-semibold mt-2">Citrus Splash</h3>
+            <p className="text-gray-500 text-lg">$24.99</p>
+          </div>
+
+          {/* Add more product cards as needed */}
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer className="w-full bg-white shadow-lg p-4 text-center mt-auto">
+        <p className="text-gray-600">© 2024 Perfume Shop. All rights reserved.</p>
       </footer>
+
+      <style jsx>{`
+        @keyframes gradient-bg {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+        .animate-gradient-bg {
+          animation: gradient-bg 15s ease infinite;
+          background-size: 200% 200%;
+        }
+      `}</style>
     </div>
   );
 }
