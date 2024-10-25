@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50 overflow-hidden">
       <header className="w-full bg-white shadow-lg p-4 flex justify-between items-center transition duration-500 hover:shadow-2xl">
-        <h1 className="text-3xl font-bold text-indigo-600">Perfume Shop</h1>
+        <h1 className="text-3xl font-bold text-indigo-600">Olcademy</h1>
         <nav className="space-x-6">
           <Link href="/" className="text-gray-700 hover:text-indigo-600 transition duration-300">Home</Link>
           <Link href="/products" className="text-gray-700 hover:text-indigo-600 transition duration-300">Products</Link>
@@ -21,7 +21,7 @@ export default function Home() {
         <div className="relative z-10 flex flex-col items-center bg-white bg-opacity-80 rounded-lg p-8 mt-16 shadow-lg transition-transform duration-500 transform hover:scale-105">
           <h2 className="text-4xl font-bold text-indigo-800">Discover Your Scent</h2>
           <p className="text-gray-700 mt-4">
-            Explore our exclusive range of perfumes crafted just for you.
+            Explore our exclusive range of products crafted just for you.
           </p>
           <Link href="/products" className="mt-6 bg-indigo-600 text-white px-8 py-4 rounded-full shadow-lg hover:bg-indigo-500 transition duration-300 transform hover:scale-105">
             Shop Now
@@ -55,7 +55,7 @@ export default function Home() {
       </main>
 
       <footer className="w-full bg-white shadow-lg p-4 text-center mt-auto">
-        <p className="text-gray-600">© 2024 Perfume Shop. All rights reserved.</p>
+        <p className="text-gray-600">© 2024 Olcademy. All rights reserved.</p>
       </footer>
 
       <style jsx>{`
